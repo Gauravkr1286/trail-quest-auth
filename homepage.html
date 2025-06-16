@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <script>
+    // Redirect if user is not logged in
+    const loggedInUserId = localStorage.getItem('loggedInUserId');
+    if (!loggedInUserId) {
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+<body>
+  <h1>Welcome to Trail Quest</h1>
+  <p>You are logged in successfully!</p>
+
+  <button onclick="logout()">Log Out</button>
+
+  <script>
+    function logout() {
+      localStorage.removeItem('loggedInUserId');
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
